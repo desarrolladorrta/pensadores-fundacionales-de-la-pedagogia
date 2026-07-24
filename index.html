@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Línea de tiempo interactiva sobre los pensadores fundacionales de la pedagogía: Sócrates, Platón, Aristóteles, Comenio, Rousseau y Herbart."
+    />
+    <meta name="theme-color" content="#173f3a" />
+    <title>Pensadores fundacionales de la pedagogía</title>
+    <link rel="icon" href="./assets/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header" id="inicio">
+      <a class="brand" href="#portada" aria-label="Ir al inicio del recurso">
+        <img class="brand__logo" src="./assets/logo-cecar.png" alt="CECAR, Corporación Universitaria del Caribe" />
+      </a>
+
+      <nav class="top-nav" aria-label="Navegación principal">
+        <a href="#recorrido">Recorrido</a>
+        <a href="#verificacion">Verificación</a>
+        <a href="#sintesis">Síntesis</a>
+      </nav>
+
+      <button class="progress-pill" id="progress-button" type="button" aria-label="Ver progreso del recorrido">
+        <span class="progress-pill__ring" aria-hidden="true"><span id="progress-number">0</span></span>
+        <span><strong>Tu avance</strong><small id="progress-label">0 de 6 explorados</small></span>
+      </button>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="portada" aria-labelledby="hero-title">
+        <div class="hero__wash" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Línea de tiempo interactiva</p>
+          <h1 id="hero-title">Las ideas que dieron forma a <em>la educación occidental</em></h1>
+          <p class="hero__intro">
+            Explora seis voces fundamentales y descubre cómo su época, sus preguntas y sus métodos
+            siguen presentes en las aulas de hoy.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#recorrido">Iniciar el recorrido <span aria-hidden="true">↓</span></a>
+            <button class="button button--ghost" type="button" data-open-guide>¿Cómo navegar?</button>
+          </div>
+          <dl class="hero__meta" aria-label="Datos del recurso">
+            <div><dt>Periodo</dt><dd>470 a. C. — 1841</dd></div>
+            <div><dt>Ruta</dt><dd>6 pensadores</dd></div>
+          </dl>
+        </div>
+
+        <aside class="hero__learning" aria-labelledby="learning-title">
+          <span class="section-number">01</span>
+          <p class="eyebrow">Propósito de aprendizaje</p>
+          <h2 id="learning-title">Al finalizar podrás…</h2>
+          <ul class="learning-list">
+            <li><span>01</span>Ubicar cronológicamente a los seis pensadores.</li>
+            <li><span>02</span>Identificar su aporte pedagógico central.</li>
+            <li><span>03</span>Relacionar cada propuesta con su contexto histórico.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="route-intro section-shell" id="recorrido" aria-labelledby="route-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Estación 01 · Explora</p>
+            <h2 id="route-title">Una conversación a través del tiempo</h2>
+          </div>
+          <p>
+            Selecciona cada hito para recorrer su contexto, aporte y legado. Los hitos consultados
+            quedarán marcados en verde.
+          </p>
+        </div>
+
+        <div class="timeline-era" aria-hidden="true">
+          <span>Antigüedad clásica</span>
+          <span>Modernidad</span>
+          <span>Siglo XIX</span>
+        </div>
+
+        <div class="timeline" id="timeline" aria-label="Línea de tiempo de pensadores"></div>
+
+        <div class="timeline-footnote">
+          <span aria-hidden="true">↳</span>
+          <p><strong>Observa la distancia temporal.</strong> Más de 1.900 años separan a Aristóteles de Comenio.</p>
+        </div>
+      </section>
+
+      <section class="concept-bridge section-shell" aria-labelledby="bridge-title">
+        <div class="concept-bridge__title">
+          <p class="eyebrow">Clave de lectura</p>
+          <h2 id="bridge-title">De la pregunta al sistema</h2>
+        </div>
+        <p>
+          La historia no es una lista aislada de autores. Es una conversación: cada propuesta
+          amplía, discute o reorganiza la manera de entender quién aprende y cómo se enseña.
+        </p>
+        <div class="concept-flow" aria-label="Evolución de enfoques pedagógicos">
+          <span>Diálogo</span><i aria-hidden="true">→</i><span>Formación</span><i aria-hidden="true">→</i>
+          <span>Experiencia</span><i aria-hidden="true">→</i><span>Método</span><i aria-hidden="true">→</i>
+          <span>Desarrollo</span><i aria-hidden="true">→</i><span>Sistema</span>
+        </div>
+      </section>
+
+      <section class="verification section-shell" id="verificacion" aria-labelledby="verification-title">
+        <div class="section-heading section-heading--light">
+          <div>
+            <p class="eyebrow">Estación 02 · Comprueba</p>
+            <h2 id="verification-title">Conecta las ideas con su autor</h2>
+          </div>
+          <p>
+            Selecciona un concepto y luego el pensador correspondiente. También puedes arrastrar
+            las etiquetas. Recibirás retroalimentación inmediata.
+          </p>
+        </div>
+
+        <div class="matching-status" aria-live="polite">
+          <span id="match-count">0 de 6 conexiones</span>
+          <div class="matching-status__bar"><span id="match-bar"></span></div>
+          <button class="text-button text-button--light" id="reset-matching" type="button">Reiniciar</button>
+        </div>
+
+        <div class="matching-board">
+          <div>
+            <h3>Conceptos clave</h3>
+            <div class="concept-bank" id="concept-bank" aria-label="Conceptos para asociar"></div>
+          </div>
+          <div>
+            <h3>Pensadores</h3>
+            <div class="author-targets" id="author-targets" aria-label="Pensadores para asociar"></div>
+          </div>
+        </div>
+
+        <div class="quiz-card" id="quiz-card" hidden>
+          <div class="quiz-card__number" aria-hidden="true">02</div>
+          <div>
+            <p class="eyebrow">Pregunta de transferencia</p>
+            <h3>¿Quién propuso un sistema educativo universal basado en la observación y el material visual?</h3>
+            <div class="quiz-options" id="quiz-options"></div>
+            <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="synthesis section-shell" id="sintesis" aria-labelledby="synthesis-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Estación 03 · Integra</p>
+            <h2 id="synthesis-title">Síntesis y conexiones</h2>
+          </div>
+          <p>Compara las ideas centrales y reconoce su permanencia en las prácticas educativas actuales.</p>
+        </div>
+
+        <div class="comparison-wrap" tabindex="0" aria-label="Tabla comparativa; desliza horizontalmente en pantallas pequeñas">
+          <table>
+            <thead><tr><th>Pensador</th><th>Contexto</th><th>Idea central</th><th>Legado actual</th></tr></thead>
+            <tbody id="comparison-body"></tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <section class="glossary section-shell" aria-labelledby="glossary-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Consulta rápida</p>
+            <h2 id="glossary-title">Glosario esencial</h2>
+          </div>
+          <p>Abre cada término para recuperar su definición y el autor con el que se relaciona.</p>
+        </div>
+        <div class="glossary-list" id="glossary-list"></div>
+      </section>
+
+      <section class="next-step section-shell" aria-labelledby="next-title">
+        <span class="section-number section-number--dark">04</span>
+        <p class="eyebrow">Próxima conexión</p>
+        <h2 id="next-title">De los fundamentos a las pedagogías del siglo XX</h2>
+        <p>
+          Estas ideas serán el antecedente para comprender la Escuela Nueva y la Pedagogía Crítica.
+          Lleva contigo una pregunta: <strong>¿educar es transmitir, acompañar o transformar?</strong>
+        </p>
+        <a class="button button--paper" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
+      </section>
+
+      <section class="references section-shell" aria-labelledby="references-title">
+        <details>
+          <summary><span id="references-title">Referencias y lecturas complementarias</span><span aria-hidden="true">+</span></summary>
+          <div class="references__content">
+            <ul>
+              <li>Abbagnano, N., &amp; Visalberghi, A. (1992). <cite>Historia de la pedagogía</cite>. Fondo de Cultura Económica.</li>
+              <li>Bowen, J. (2003). <cite>A History of Western Education</cite>. Routledge.</li>
+              <li>Jaeger, W. (1962). <cite>Paideia: The Ideals of Greek Culture</cite>. Oxford University Press.</li>
+              <li>Luzuriaga, L. (1980). <cite>Historia de la Educación y de la Pedagogía</cite>. Editorial Losada.</li>
+              <li>Rousseau, J. J. (2011). <cite>Emilio, o De la educación</cite> (M. Armiño, Trad.). Alianza Editorial. (Obra original publicada en 1762).</li>
+            </ul>
+            <div>
+              <h3>Recursos sugeridos</h3>
+              <p>Animación explicativa: <cite>La alegoría de la caverna de Platón</cite>.</p>
+              <p>Audio: <cite>Sócrates y los sofistas</cite>.</p>
+              <p>Lectura primaria: Rousseau, <cite>Emilio</cite>, Libro Segundo.</p>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>CECAR · Recurso educativo</p>
+      <p>Diseñado para Aprendizaje Virtual</p>
+    </footer>
+
+    <dialog class="thinker-dialog" id="thinker-dialog" aria-labelledby="dialog-name">
+      <div class="dialog-shell">
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar ventana">×</button>
+        <aside class="dialog-profile">
+          <p class="eyebrow" id="dialog-index">Hito 01</p>
+          <div class="dialog-portrait" id="dialog-portrait" aria-hidden="true"></div>
+          <p class="dialog-dates" id="dialog-dates"></p>
+          <h2 id="dialog-name"></h2>
+          <p class="dialog-key" id="dialog-key"></p>
+          <button class="text-button" id="previous-thinker" type="button">← Anterior</button>
+          <button class="text-button" id="next-thinker" type="button">Siguiente →</button>
+        </aside>
+        <div class="dialog-content">
+          <div class="dialog-tabs" role="tablist" aria-label="Información del pensador">
+            <button id="tab-context" type="button" role="tab" aria-selected="true" aria-controls="dialog-panel" data-tab="context">Contexto</button>
+            <button id="tab-contribution" type="button" role="tab" aria-selected="false" aria-controls="dialog-panel" tabindex="-1" data-tab="contribution">Aporte pedagógico</button>
+            <button id="tab-legacy" type="button" role="tab" aria-selected="false" aria-controls="dialog-panel" tabindex="-1" data-tab="legacy">Legado</button>
+          </div>
+          <div class="dialog-panel" id="dialog-panel" role="tabpanel" aria-labelledby="tab-context" tabindex="0"></div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="guide-dialog" id="guide-dialog" aria-labelledby="guide-title">
+      <div class="guide-dialog__body">
+        <button class="dialog-close" type="button" data-close-guide aria-label="Cerrar guía">×</button>
+        <p class="eyebrow">Antes de comenzar</p>
+        <h2 id="guide-title">Tu ruta de aprendizaje</h2>
+        <ol>
+          <li><span>01</span><div><strong>Explora</strong><p>Abre los seis hitos de la línea de tiempo y navega sus tres pestañas.</p></div></li>
+          <li><span>02</span><div><strong>Conecta</strong><p>Asocia cada concepto con su autor y responde la pregunta final.</p></div></li>
+          <li><span>03</span><div><strong>Integra</strong><p>Compara aportes, escribe una reflexión y completa tu autoevaluación.</p></div></li>
+        </ol>
+        <button class="button button--primary" type="button" data-close-guide>Entendido, comenzar</button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
