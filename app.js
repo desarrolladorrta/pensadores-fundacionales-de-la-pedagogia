@@ -3,6 +3,7 @@ const thinkers = [
     id: "socrates",
     name: "Sócrates",
     initials: "S",
+    image: "./assets/socrates.png",
     dates: "c. 470 — 399 a. C.",
     color: "#d8b57c",
     key: "Mayéutica · Diálogo",
@@ -21,6 +22,7 @@ const thinkers = [
     id: "platon",
     name: "Platón",
     initials: "P",
+    image: "./assets/platon.png",
     dates: "c. 427 — 347 a. C.",
     color: "#b8c8b1",
     key: "Paideia · Formación integral",
@@ -39,6 +41,7 @@ const thinkers = [
     id: "aristoteles",
     name: "Aristóteles",
     initials: "A",
+    image: "./assets/aristoteles.png",
     dates: "384 — 322 a. C.",
     color: "#d9a88e",
     key: "Hábito · Experiencia",
@@ -58,6 +61,7 @@ const thinkers = [
     name: "Juan Amós Comenio",
     shortName: "Comenio",
     initials: "C",
+    image: "./assets/comenio.png",
     dates: "1592 — 1670",
     color: "#a7c2c0",
     key: "Pansofía · Didáctica",
@@ -77,6 +81,7 @@ const thinkers = [
     name: "Jean-Jacques Rousseau",
     shortName: "Rousseau",
     initials: "R",
+    image: "./assets/rousseau.png",
     dates: "1712 — 1778",
     color: "#d6c19a",
     key: "Educación natural · Infancia",
@@ -96,6 +101,7 @@ const thinkers = [
     name: "Johann Friedrich Herbart",
     shortName: "Herbart",
     initials: "H",
+    image: "./assets/herbart.png",
     dates: "1776 — 1841",
     color: "#beb5c9",
     key: "Apercepción · Sistema",
@@ -151,7 +157,7 @@ function renderTimeline() {
     return `<button class="timeline-item${visited ? " is-visited" : ""}" type="button" data-thinker="${index}" aria-label="Explorar a ${thinker.name}${visited ? ", ya consultado" : ""}">
       <span class="timeline-item__date">${thinker.dates}</span>
       <span class="timeline-item__dot" aria-hidden="true"></span>
-      <span class="timeline-item__portrait" style="--portrait:${thinker.color}" aria-hidden="true"><span>${thinker.initials}</span></span>
+      <span class="timeline-item__portrait" style="--portrait:${thinker.color}" aria-hidden="true"><img src="${thinker.image}" alt="" loading="lazy"></span>
       <span class="timeline-item__name">${thinker.shortName || thinker.name}</span>
       <span class="timeline-item__status">${visited ? "Consultado ✓" : "Explorar +"}</span>
     </button>`;
@@ -180,7 +186,7 @@ function openThinker(index) {
   document.querySelector("#dialog-dates").textContent = thinker.dates;
   document.querySelector("#dialog-name").textContent = thinker.name;
   document.querySelector("#dialog-key").textContent = thinker.key;
-  document.querySelector("#dialog-portrait").innerHTML = `<span>${thinker.initials}</span>`;
+  document.querySelector("#dialog-portrait").innerHTML = `<img src="${thinker.image}" alt="">`;
   document.querySelector(".dialog-profile").style.setProperty("--profile", thinker.color);
   updateTabState();
   renderDialogPanel();
@@ -226,7 +232,7 @@ function renderMatching() {
   document.querySelector("#author-targets").innerHTML = thinkers.map((thinker) => {
     const concept = state.matches[thinker.id];
     return `<button class="author-target${concept ? " is-correct" : ""}" type="button" data-target="${thinker.id}" aria-label="Asociar concepto con ${thinker.name}">
-      <span class="target-portrait" style="--portrait:${thinker.color}" aria-hidden="true"><span>${thinker.initials}</span></span>
+      <span class="target-portrait" style="--portrait:${thinker.color}" aria-hidden="true"><img src="${thinker.image}" alt="" loading="lazy"></span>
       <strong>${thinker.shortName || thinker.name}</strong><small>${concept ? thinker.concept + " ✓" : "Soltar o seleccionar"}</small>
     </button>`;
   }).join("");

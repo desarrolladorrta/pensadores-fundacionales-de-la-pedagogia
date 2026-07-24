@@ -216,9 +216,7 @@ h1, h2, h3 { text-wrap: balance; }
   font: 600 32px var(--serif);
 }
 .timeline-item__portrait { width: clamp(74px, 8vw, 104px); aspect-ratio: .86; margin-bottom: 18px; }
-.timeline-item__portrait::before, .target-portrait::before, .dialog-portrait::before { content: ""; position: absolute; width: 48%; aspect-ratio: .82; border: 1px solid currentColor; border-radius: 50%; opacity: .22; }
-.timeline-item__portrait::after, .target-portrait::after, .dialog-portrait::after { content: ""; position: absolute; bottom: -18%; width: 78%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50% 50% 0 0; opacity: .16; }
-.timeline-item__portrait span, .target-portrait span, .dialog-portrait span { position: relative; z-index: 1; }
+.timeline-item__portrait img, .target-portrait img, .dialog-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .timeline-item__name { font: 600 clamp(15px, 1.5vw, 20px)/1.1 var(--serif); }
 .timeline-item__status { margin-top: 6px; color: var(--ink-soft); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
 .timeline-item.is-visited .timeline-item__status { color: var(--success); }

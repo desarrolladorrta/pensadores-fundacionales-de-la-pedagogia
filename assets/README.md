@@ -1,13 +1,13 @@
 # Especificaciones de imágenes
 
-El recurso funciona actualmente con medallones tipográficos, por lo que no depende de imágenes externas ni presenta recursos faltantes. Si se incorporan retratos históricos, deben ubicarse en `assets/portraits/` con estos nombres:
+El recurso utiliza retratos locales y no depende de imágenes externas. Los archivos activos son:
 
-- `socrates.webp`
-- `platon.webp`
-- `aristoteles.webp`
-- `comenio.webp`
-- `rousseau.webp`
-- `herbart.webp`
+- `socrates.png`
+- `platon.png`
+- `aristoteles.png`
+- `comenio.png`
+- `rousseau.png`
+- `herbart.png`
 
 ## Medidas y tratamiento
 
